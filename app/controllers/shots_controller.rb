@@ -28,7 +28,7 @@ class ShotsController < ApplicationController
 
     respond_to do |format|
       if @shot.save
-        format.html { redirect_to @shot, notice: 'Shot was successfully created.' }
+        format.html { redirect_to shots_path , notice: 'Shot was successfully created.' }
         format.json { render :show, status: :created, location: @shot }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ShotsController < ApplicationController
   def update
     respond_to do |format|
       if @shot.update(shot_params)
-        format.html { redirect_to @shot, notice: 'Shot was successfully updated.' }
+        format.html { redirect_to shots_path , notice: 'Shot was successfully updated.' }
         format.json { render :show, status: :ok, location: @shot }
       else
         format.html { render :edit }

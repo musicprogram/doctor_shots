@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categorias = [{nombrecategoria: "Fria"},{nombrecategoria: "fuego"}]
+categorias = [{nombrecategoria: "FRÍA"},{nombrecategoria: "FUEGO"}]
 categorias.each do |e|
 Categoria.create(e) unless Categoria.exists?(e)
 end
