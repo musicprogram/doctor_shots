@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @shot.nombreshot %>
+</p>
+
+<%=%>
+<%= image_tag @shot.imagen.url(:medium) %>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @shot.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @shot.precio %>
+</p>
+
+<p>
+  <strong>Categoría:</strong>
+  <%= @shot.categoria.nombrecategoria %>
+</p>
+
+<%= link_to 'Edit', edit_shot_path(@shot) %> |
+<%= link_to 'Back', shots_path %>

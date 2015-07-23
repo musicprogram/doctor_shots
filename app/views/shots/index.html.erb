@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+
+<h1>Listing Shots</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shots.each do |shot| %>
+      <tr>
+        <td><%= shot.nombreshot %></td>
+        <td><%= image_tag shot.imagen.url(:medium) %></td>
+        <td><%= shot.descripcion %></td>
+        <td><%= shot.precio.round(3) rescue nil %></td>
+        <td><%= link_to 'Show', shot %></td>
+        <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+        <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shot', new_shot_path %>
+
+  </div>
+</div>
+
+
+
+<section id="portfolio" class="clear bounce-in">
+        <div class="containerContent">
+        <div class="set_size_section1">
+            <h2 class="services_h2 center">IMAGE GALLERY</h2>
+            <div class="folio-list">
+              
+               <% @shots.each do |shot| %>
+              
+                    <div class="thumbnail folio-thumb">
+                        <figure class="gallery-item">
+                            <%= image_tag shot.imagen.url(:medium), class: 'img-responsive' %>
+                            <figcaption class="img-title">
+                                 <h3><%= shot.nombreshot %></h3>
+                              <%= shot.descripcion %>
+                            </figcaption>
+                        </figure>
+                        <h5 class="centro"><b><%= shot.precio.round(3)  %></b></h5>
+                        
+                    </div>
+                
+                  <% end %>  
+            </div>
+        </div>
+        </div>
+    </section>
+
+<footer>
+    <div class="about-me-img">
+        <a href="http://jakubtursky.studenthosting.sk/?lang=en">
+        <img src="http://www.mediafire.com/convkey/722e/qk13jrjdq7z45k1zg.jpg" alt="Jakub Turský" width="110px" height="110px">
+        </a>
+        <div class="authorWindowWrapper">
+            <div class="authorWindow">
+                <p>Image gallery with hover effect <br>
+                    Created by <a href="http://jakubtursky.studenthosting.sk/?lang=en"><strong>Jakub Turský</strong></a> <br>
+                    For next info about me you can visit me site ( click on my image, name, or copy url www.jakubtursky.studenthosting.sk/?lang=en ) <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+

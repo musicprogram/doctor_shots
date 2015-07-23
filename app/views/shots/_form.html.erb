@@ -1,0 +1,43 @@
+<%= form_for @shot, html: { multipart: true } do |f| %>
+  <% if @shot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shot.errors.count, "error") %> prohibited this shot from being saved:</h2>
+
+      <ul>
+      <% @shot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombreshot %><br>
+    <%= f.text_field :nombreshot %>
+  </div>
+  
+  <div class="field">
+    imagen
+    <%= f.file_field :imagen %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.text_field :precio %>
+  </div>
+  
+ 
+   <div class="field">
+       Municipio Ubicación <br>
+      <%= f.collection_select :categoria_id, Categoria.all, :id, :nombrecategoria, class: "form-control",     prompt: "Seleccione Categoría" %>
+   </div>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
