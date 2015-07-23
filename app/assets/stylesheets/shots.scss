@@ -6,12 +6,12 @@
 // Carrousel efecto
 
 /*
-img{
+.shotindex{
 	-webkit-filter: grayscale(1);
 	cursor: pointer;
 	transition: all .5s ease;
 }
-img:hover{
+.shotindex:hover{
 	-webkit-filter: grayscale(0);
   transform: scale(1.2,1.2);
 }
@@ -21,6 +21,10 @@ img:hover{
 
 
 
+.centrar{
+    text-align: center;
+    
+}
 
 .centro{
     text-align: center;
@@ -39,6 +43,7 @@ img:hover{
     background: #ddd;
     cursor: pointer;
     user-select: none;
+    border-radius: 5px;
     &.active {
       background: #bbb;
     }
@@ -67,10 +72,11 @@ img:hover{
     img {
       width: 100%;
       height: auto;
+      border-radius: 15px;
     }
     figcaption {
       position: absolute;
-      top: 50%; left: 0;
+      top: 35%; left: 0;
       transform: translateY(-50%);
       z-index: 2;
       width: 100%;
@@ -105,8 +111,21 @@ img:hover{
     img {
       width: 100%;
       height: auto;
+      border-radius: 15px;
+      -webkit-filter: grayscale(1);
+    	cursor: pointer;
+    	transition: all .5s ease;
+    	-webkit-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
       //height: 200px;
       //object-fit: cover;
     }
+    img:hover{
+    	-webkit-filter: grayscale(0);
+      transform: scale(1.2,1.2);
+    }
   }
 }
+
+
