@@ -3,7 +3,8 @@
 <nav class="product-view">
   <i class="fa fa-th btn-gallery active"></i>
   <i class="fa fa-list btn-list"></i>
-  <%= link_to "<i class='fa fa-plus'></i>".html_safe, new_shot_path %>
+  <i class='fa fa-plus' data-toggle="modal" data-target="#myModal"></i>
+  <%= link_to "<i class='fa fa-reply-all'></i>".html_safe, bienvenido_index_path %>
 
 </nav>
 
@@ -16,13 +17,33 @@
     <figcaption> <h1 class="centrar"><b><%= shot.nombreshot.upcase %></b></h1>
     <h5> <b><%= shot.descripcion %></b> </h5>  
     <h3> <b><%= shot.categoria.nombrecategoria.upcase  %> </b> </h3>   
-    <h3> <b> <i class="fa fa-usd"></i> <%= shot.precio.round(3)  %> </b> </h3>  
+    <h3> <b> <i class="fa fa-usd"></i> <%= shot.precio.round(3) rescue nil %> </b> </h3>  
     </figcaption> <br>
   
   </figure>
     <% end %> 
 </section>
   
+  
+   
+
+  
  
 <%= render 'shotscript' %>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+   
+      <div class="modal-body">
+        
+        <%= render 'form' %>
+      </div>
+      <div class="modal-footer">
+      
+      </div>
+    </div>
+  </div>
+</div>

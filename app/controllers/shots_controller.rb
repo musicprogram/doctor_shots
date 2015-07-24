@@ -5,6 +5,7 @@ class ShotsController < ApplicationController
   # GET /shots.json
   def index
     @shots = Shot.all
+    @shot = Shot.new
   end
 
   # GET /shots/1

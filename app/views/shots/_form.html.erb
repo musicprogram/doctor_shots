@@ -14,11 +14,11 @@
   <div class="col-md-12">
     
     <div class="col-md-6">
-      <h4>Nombre</h4><br>
+      <h4>Nombre</h4>
     <%= f.text_field :nombreshot, class:'form-control' %>
     </div>
     <div class="col-md-6">
-      <h4>Imagen Shot</h4> <br>
+      <h4>Imagen Shot</h4>
     <%= f.file_field :imagen, class:'form-control' %>
     </div>
     
@@ -27,12 +27,12 @@
   <div class="col-md-12">
     
     <div class="col-md-6">
-             <h4>Categoría</h4> <br>
+             <h4>Categoría</h4> 
       <%= f.collection_select :categoria_id, Categoria.all, :id, :nombrecategoria,{prompt: "Seleccione"}, {class: "form-control"} %>
     
     </div>
     <div class="col-md-6">
-       <h4>Precio</h4><br>
+       <h4>Precio</h4>
     <%= f.number_field :precio , :type => 'float' , :in => 0..100, :step => 0.01, class:'form-control' %>
     </div>
     
@@ -41,11 +41,11 @@
   <div class="col-md-12">
     
     <div class="col-md-6">
-      <h4>Descripción</h4><br>
+      <h4>Descripción</h4>
     <%= f.text_area :descripcion, class:'form-control' %>
     </div>
     <div class="col-md-6">
-      <br><br><br>
+      <br> <br>
        <%= f.submit "Guardar", class:'btn btn-default btn-lg btn-block' %>
     </div>
     
@@ -53,3 +53,4 @@
 
 
 <% end %>
+

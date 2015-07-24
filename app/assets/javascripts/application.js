@@ -18,3 +18,4 @@
 
 
 
+$('#myModal').modal('toggle')

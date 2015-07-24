@@ -5954,7 +5954,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #202020;
+  background: rgba(100, 94, 85, 0.3);
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -5982,9 +5982,7 @@ button.close {
   filter: alpha(opacity=50);
 }
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #282828;
-  min-height: 16.42857143px;
+ 
 }
 .modal-header .close {
   margin-top: -2px;
@@ -6000,7 +5998,7 @@ button.close {
 .modal-footer {
   padding: 20px;
   text-align: right;
-  border-top: 1px solid #282828;
+  border-top: 0px solid #282828;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
