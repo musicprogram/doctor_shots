@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722235207) do
+ActiveRecord::Schema.define(version: 20150724235207) do
 
   create_table "categorias", force: :cascade do |t|
     t.string   "nombrecategoria"
     t.float    "precio"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "imagencategoria_file_name"
+    t.string   "imagencategoria_content_type"
+    t.integer  "imagencategoria_file_size"
+    t.datetime "imagencategoria_updated_at"
   end
 
   create_table "shots", force: :cascade do |t|
@@ -31,6 +35,10 @@ ActiveRecord::Schema.define(version: 20150722235207) do
     t.string   "imagen_content_type"
     t.integer  "imagen_file_size"
     t.datetime "imagen_updated_at"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
   end
 
   add_index "shots", ["categoria_id"], name: "index_shots_on_categoria_id"

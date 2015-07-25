@@ -74,6 +74,14 @@
       height: auto;
       border-radius: 15px;
     }
+    small.small{
+      display: none;
+    }
+    img.pequeña {
+      width: 20%;
+      height: auto;
+      border-radius: 15px;
+    }
     figcaption {
       position: absolute;
       top: 40%; left: 0;
@@ -125,7 +133,28 @@
     	-webkit-filter: grayscale(0);
       transform: scale(1.2,1.2);
     }
+    
+    img.pequeña {
+      width: 20%;
+      height: auto;
+      border-radius: 15px;
+    }
+    
+    small.smal{
+      display: none;
+    }
+    
+    
+    
   }
 }
 
+
+.sombra{
+  text-shadow: 9px 3px 12px rgba(150, 150, 150, 1);
+}
+
+.colorletra{
+  color: white;
+}
 

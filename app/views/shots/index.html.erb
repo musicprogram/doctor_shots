@@ -1,12 +1,13 @@
 
 
-<nav class="product-view">
+<nav class="product-view navbar-fixed-top">
   <i class="fa fa-th btn-gallery active"></i>
   <i class="fa fa-list btn-list"></i>
   <i class='fa fa-plus' data-toggle="modal" data-target="#myModal"></i>
   <%= link_to "<i class='fa fa-reply-all'></i>".html_safe, bienvenido_index_path %>
 
 </nav>
+<br>
 
 <section class="products gallery">
   <% @shots.each do |shot| %>
@@ -14,10 +15,25 @@
 
   <figure>
     <%= image_tag shot.imagen.url%>
-    <figcaption> <h1 class="centrar"><b><%= shot.nombreshot.upcase %></b></h1>
-    <h5> <b><%= shot.descripcion %></b> </h5>  
-    <h3> <b><%= shot.categoria.nombrecategoria.upcase  %> </b> </h3>   
-    <h3> <b> <i class="fa fa-usd"></i> <%= shot.precio.round(3) rescue nil %> </b> </h3>  
+    <figcaption> 
+    
+    
+      <blockquote>
+        
+        <h2 class=""><b><%= shot.nombreshot.upcase %></b></h2>
+       
+        <%= link_to "<i class='fa fa-headphones fa-2x'></i>".html_safe, shot.audio.url, :class => "play" %>
+       
+        <p class="colorletra"> <b><%= shot.descripcion %></b> </p>  
+        <h4> <b>Categoría <%= shot.categoria.nombrecategoria.upcase rescue nil %> </b> </h4>   
+        <h3> <b> <i class="fa fa-usd"></i> <%= shot.precio.round(3) rescue nil %> </b> </h3> 
+        <h3><%= image_tag shot.categoria.imagencategoria.url, class:'pequeña pe' rescue nil%></h3>
+        <small class="smal colorletra">Todos los derechos reservados <cite title="Source Title">doctorshots.com</cite></small>
+        <small class="small colorletra"> <b><%= shot.nombreshot.upcase %></b> <cite title="Source Title">doctorshots.com</cite></small>
+      </blockquote>
+      
+      
+      
     </figcaption> <br>
   
   </figure>
@@ -47,3 +63,18 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  $(document).ready(function(){
+$("#jquery_jplayer_1").jPlayer({
+    swfPath: "/app/assets/jplayerflash",
+    supplied: "mp3",
+    wmode: "window"
+});
+$('a.play').click(function(e) {
+    e.preventDefault();
+    $("#jquery_jplayer_1")
+        .jPlayer("setMedia", {mp3: this.href })
+        .jPlayer("play");
+</script>

@@ -4,9 +4,12 @@
 
 
 
-img {
+img.logo {
   display: block;
   width: 100%;
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, 
+      color-stop(60%, transparent), 
+      from(transparent),to(white)) ;
 }
 
 
@@ -56,4 +59,5 @@ input[type=checkbox]:checked + label:before {
 .border {
   border: 2px dashed #00FFAA;
 }
+
 
